@@ -75,7 +75,8 @@ Retry.prototype.upload = function(sourcePath, destination, cb) {
 
     var headers = {
       'Content-Type': self.mime.lookup(sourcePath),
-      'Content-Length': file.length
+      'Content-Length': file.length,
+      'x-amz-acl': 'public-read'
     }
 
     self.uploadWithRetries(file, headers, destination, cb)
