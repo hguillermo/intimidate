@@ -3,6 +3,11 @@ var knox = require('knox')
 var mime = require('mime')
 var waitress = require('waitress')
 
+// Define some content type mappings
+mime.define({
+  'application/json': ['map']
+});
+
 /**
  * @class Retry
  * @constructor
